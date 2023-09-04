@@ -2,7 +2,7 @@
   <h3>Payment Form</h3>
 
   <!-- Example using built-in titlecase pipe -->
-  <div class="row mb-5">
+  <div class="row mb-3">
     <div class="form-group col">
       <label>Payee Name</label>
       <input class="form-control" (input)="onNameChange($any($event).target.value)" />
@@ -16,7 +16,7 @@
   </div>
 
   <!-- Example using built-in date pipe -->
-  <div class="row mb-5">
+  <div class="row mb-3">
     <div class="form-group col">
       <label>Payment Date</label>
       <input type="date" class="form-control" (input)="onDateChange($any($event).target.value)" />
@@ -30,7 +30,7 @@
   </div>
 
   <!-- Example using built-in currency pipe -->
-  <div class="row mb-5">
+  <div class="row mb-3">
     <div class="form-group col">
       <label>Payment Amount</label>
       <input class="form-control" (input)="onAmountChange($any($event).target.value)" />
@@ -44,7 +44,7 @@
   </div>
 
   <!-- Example using built-in number pipe -->
-  <div class="row mb-5">
+  <div class="row mb-3">
     <div class="form-group col">
       <label>Height</label>
       <input class="form-control" (input)="onHeightChange($any($event).target.value)" />
@@ -58,8 +58,8 @@
   </div>
 
 
-  <!-- Example using a custom pipe that we named 'convert' -->
-  <div class="row mb-5">
+  <!-- Example using a custom pipe that we named 'convert'.  Note that pipes can be chained together-->
+  <div class="row mb-3">
     <div class="form-group col">
       <label>Miles</label>
       <input class="form-control" (input)="onMilesChange($any($event).target.value)" />
@@ -67,13 +67,13 @@
     <div class="col">
       <label><b>Kilometers</b></label>
       <div>
-        {{ miles | convert }}
+        {{ miles | convert: 'km' | number: '1.0-2'}}
       </div>
     </div>
   </div>
 
   <!-- Example converting an object to json and displaying -->
-  <div class="row mb-5 bg-info p-2 rounded">
+  <div class="row mb-3 bg-info p-2 rounded">
     <h4>Displaying a JSON object using json pipe: </h4>
     <h5>{{ car | json }}</h5>
   </div>
